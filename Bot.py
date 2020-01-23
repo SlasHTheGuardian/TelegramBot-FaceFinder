@@ -32,7 +32,13 @@ def voice_processing(message):
     file_path.write_bytes(downloaded_file)
     newfile = folder_path / f'{filename}.wav'
     data, samplerate = sf.read(file_path)
-    sf.write('new_file.wav', data, sr=16000) #конвертация аудио
+    #Исправлено
+    dirpath = os.listdir(f'D:\mylab\database\Voices\{ID}')
+    number = 0
+    for element in dirpath:
+        number=number+1
+    number_of_new_element = number + 1
+    sf.write(f'audio_message_{number_of_new_element}.wav', data, sr=16000) #конвертация аудио
 
 #---поиск лиц на фото    
 
