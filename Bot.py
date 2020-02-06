@@ -6,12 +6,6 @@ import subprocess
 import soundfile as sf
 import cv2
 
-apihelper.proxy = {'https':'188.165.32.153:5010'}
-proxy = {'https':'40.121.107.116:8080'}
-
-TOKEN = '733372767:AAHg5YJZN6eaM-YxOWitorRoYA9ZOfAuEII'
-murl = f'https://api.telegram.org/bot{TOKEN}'
-
 bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(content_types=['text'])
 
